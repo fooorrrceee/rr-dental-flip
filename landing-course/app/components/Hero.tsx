@@ -17,12 +17,12 @@ export function Hero() {
             A calm, family-friendly clinic offering preventive and restorative
             treatments for children and adults.
           </p>
-          <a
-            href="#contact"
-            className="mt-6 inline-flex rounded-full bg-sky-600 px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-700"
-          >
-            Book an appointment
+          <a href="#contact">
+            <Button className="mt-6 rounded-full px-6 py-2.5">
+                Book an appointment
+            </Button>
           </a>
+
         </div>
         <div
           className="flex min-h-[160px] flex-1 items-center justify-center rounded-xl bg-slate-200 text-sm text-slate-600"
