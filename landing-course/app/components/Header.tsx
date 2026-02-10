@@ -39,6 +39,11 @@ export function Header() {
               </a>
             </li>
             <li>
+              <a href="#faq" className="hover:text-sky-600">
+                FAQ
+              </a>
+            </li>
+            <li>
               <a href="#contact" className="hover:text-sky-600">
                 Contact
               </a>
@@ -107,6 +112,15 @@ export function Header() {
                 className="block py-1.5 hover:text-sky-600"
               >
                 Services
+              </a>
+            </li>
+            <li>
+              <a
+                href="#faq"
+                onClick={closeMenu}
+                className="block py-1.5 hover:text-sky-600"
+              >
+                FAQ
               </a>
             </li>
             <li>
