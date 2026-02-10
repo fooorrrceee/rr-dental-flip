@@ -1,3 +1,9 @@
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+} from "@/components/ui/card";
 export function ServicesSection() {
   return (
     <section
@@ -13,31 +19,40 @@ export function ServicesSection() {
           Our key services
         </h2>
         <div className="mt-6 grid gap-6 sm:grid-cols-3">
-          <article className="rounded-xl border border-slate-200 bg-white p-4">
-            <h3 className="text-base font-semibold text-slate-900">
-              Child dentistry
-            </h3>
-            <p className="mt-2 text-sm text-slate-600">
-              Gentle care focused on building healthy habits early.
-            </p>
-          </article>
-          <article className="rounded-xl border border-slate-200 bg-white p-4">
-            <h3 className="text-base font-semibold text-slate-900">
-              Orthodontics
-            </h3>
-            <p className="mt-2 text-sm text-slate-600">
-              Teeth alignment options for teens and adults.
-            </p>
-          </article>
-          <article className="rounded-xl border border-slate-200 bg-white p-4">
-            <h3 className="text-base font-semibold text-slate-900">
-              Restorative care
-            </h3>
-            <p className="mt-2 text-sm text-slate-600">
-              Fillings, crowns, and dentures to restore function and comfort.
-            </p>
-          </article>
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-base">Child dentistry</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-slate-600">
+                Gentle care focused on building healthy habits early.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-base">Orthodontics</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-slate-600">
+                Teeth alignment options for teens and adults.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-base">Restorative care</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-slate-600">
+                Fillings, crowns, and dentures to restore function and comfort.
+              </p>
+            </CardContent>
+          </Card>
         </div>
+
       </div>
     </section>
   );
