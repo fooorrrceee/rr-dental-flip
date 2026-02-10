@@ -1,6 +1,6 @@
 export function AboutSection() {
   return (
-    <section id="about" className="py-12 sm:py-16">
+    <section id="about" className="py-12 sm:py-16 scroll-mt-16" aria-labelledby="about-heading">
       <div className="mx-auto max-w-5xl px-4">
         <h2 className="text-2xl font-semibold text-slate-900">
           About our clinic

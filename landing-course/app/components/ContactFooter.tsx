@@ -2,7 +2,7 @@ export function ContactFooter() {
   return (
     <footer
       id="contact"
-      className="bg-slate-900 py-10 text-slate-100"
+      className="bg-slate-900 py-10 text-slate-100 scroll-mt-16"
       aria-labelledby="contact-heading"
     >
       <div className="mx-auto max-w-5xl px-4">

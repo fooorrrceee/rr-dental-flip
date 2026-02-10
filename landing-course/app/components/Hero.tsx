@@ -4,7 +4,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="bg-slate-50 py-12 sm:py-16"
+      className="bg-slate-50 py-12 sm:py-16 scroll-mt-16 "
       aria-labelledby="hero-heading"
     >
       <div className="mx-auto flex max-w-5xl flex-col gap-8 px-4 sm:flex-row sm:items-center">

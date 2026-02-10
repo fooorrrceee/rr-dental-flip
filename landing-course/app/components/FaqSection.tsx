@@ -27,7 +27,7 @@ const faqs = [
 export function FaqSection() {
 
   return (
-    <section id="faq" className="bg-slate-50 py-16">
+    <section id="faq" className="bg-slate-50 py-16 scroll-mt-16">
       <div className="mx-auto max-w-4xl px-4">
         <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
           Frequently asked questions
