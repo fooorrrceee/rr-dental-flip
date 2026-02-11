@@ -4,6 +4,7 @@ import { AboutSection } from "./components/AboutSection";
 import { ServicesSection } from "./components/ServicesSection";
 import { ContactFooter } from "./components/ContactFooter";
 import { FaqSection } from "./components/FaqSection";
+import { DentistSection } from "./components/DentistSection";
 
 
 
@@ -14,6 +15,7 @@ export default function Home() {
       <main>
         <Hero />
         <AboutSection />
+        <DentistSection />
         <ServicesSection />
         <FaqSection />
       </main>
