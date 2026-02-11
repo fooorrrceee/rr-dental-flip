@@ -8,9 +8,11 @@ import {
 type Service = {
   headline: string;      // patient-facing problem/outcome
   technicalName: string; // clinical/procedure name
-  description: string;   // short explanation, outcome-focused
-  highlight?: string;    // optional tag
+  description: string;
+  highlight?: string;
+  priority?: "core" | "additional";
 };
+
 
 const services: Service[] = [
   {
@@ -19,6 +21,7 @@ const services: Service[] = [
     description:
       "We help anxious kids feel safe in the chair while building simple, lifelong brushing and check-up habits.",
     highlight: "Kid-friendly care",
+    priority: "core",
   },
   {
     headline: "Straightening crowded or crooked teeth",
@@ -26,27 +29,7 @@ const services: Service[] = [
     description:
       "We use braces and clear aligners to improve bite, alignment, and confidence in your smile over time.",
     highlight: "Braces & aligners",
-  },
-  {
-    headline: "Repairing weak or broken teeth",
-    technicalName: "Crowns and bridges",
-    description:
-      "Custom-made caps and bridges protect damaged teeth and fill gaps so you can chew comfortably again.",
-    highlight: "Protect & replace",
-  },
-  {
-    headline: "Replacing several missing teeth",
-    technicalName: "Dentures",
-    description:
-      "Partial and full dentures are designed to fit well, restore chewing, and support the shape of your face.",
-    highlight: "Removable solutions",
-  },
-  {
-    headline: "Fixed replacement for missing teeth",
-    technicalName: "Dental implants",
-    description:
-      "Implants act like artificial tooth roots, supporting crowns that look and feel close to natural teeth.",
-    highlight: "Long-term option",
+    priority: "core",
   },
   {
     headline: "Relief from severe tooth pain",
@@ -54,6 +37,31 @@ const services: Service[] = [
     description:
       "We remove the infection inside the tooth so pain settles and, in many cases, the tooth can be saved.",
     highlight: "Tooth-saving care",
+    priority: "core",
+  },
+  {
+    headline: "Fixed replacement for missing teeth",
+    technicalName: "Dental implants",
+    description:
+      "Implants act like artificial tooth roots, supporting crowns that look and feel close to natural teeth.",
+    highlight: "Long-term option",
+    priority: "core",
+  },
+  {
+    headline: "Repairing weak or broken teeth",
+    technicalName: "Crowns and bridges",
+    description:
+      "Custom-made caps and bridges protect damaged teeth and fill gaps so you can chew comfortably again.",
+    highlight: "Protect & replace",
+    priority: "additional",
+  },
+  {
+    headline: "Replacing several missing teeth",
+    technicalName: "Dentures",
+    description:
+      "Partial and full dentures are designed to fit well, restore chewing, and support the shape of your face.",
+    highlight: "Removable solutions",
+    priority: "additional",
   },
   {
     headline: "Jaw pain, clicking, and headache relief",
@@ -61,6 +69,7 @@ const services: Service[] = [
     description:
       "We assess and treat jaw joint problems that cause pain, stiffness, or noise when you open and close.",
     highlight: "Jaw joint care",
+    priority: "additional",
   },
   {
     headline: "Restoring appearance after injury or surgery",
@@ -68,11 +77,20 @@ const services: Service[] = [
     description:
       "Specialised prosthetic work helps rebuild missing facial structures to improve function and confidence.",
     highlight: "Specialised care",
+    priority: "additional",
   },
 ];
 
 
+
 export function ServicesSection() {
+  const coreServices = services.filter(
+    (service) => service.priority !== "additional"
+  );
+  const additionalServices = services.filter(
+    (service) => service.priority === "additional"
+  );
+
   return (
     <section
       id="services"
@@ -86,8 +104,15 @@ export function ServicesSection() {
         >
           Our key services
         </h2>
-        <div className="mt-6 grid gap-6 sm:grid-cols-3">
-          {services.map((service) => (
+
+        <p className="mt-2 text-sm text-slate-600">
+          From everyday check-ups to advanced treatments, we help you deal with
+          common dental problems in one clinic.
+        </p>
+
+        {/* Core services as full cards */}
+        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {coreServices.map((service) => (
             <Card key={service.technicalName}>
               <CardHeader className="pb-3">
                 <CardTitle className="text-base">
@@ -111,6 +136,30 @@ export function ServicesSection() {
           ))}
         </div>
 
+        {/* Additional services as a compact list */}
+        {additionalServices.length > 0 && (
+          <div className="mt-8">
+            <h3 className="text-sm font-semibold text-slate-900 sm:text-base">
+              More treatments we offer
+            </h3>
+            <ul className="mt-3 grid gap-3 grid-cols-2">
+              {additionalServices.map((service) => (
+                <li
+                  key={service.technicalName}
+                >
+                  <Card className="border-slate-200 bg-white/80 p-3">
+                    <p className="text-xs font-medium text-slate-900 sm:text-sm">
+                      {service.headline}
+                    </p>
+                    <p className="mt-0.5 text-[11px] text-slate-500 sm:text-xs">
+                      {service.technicalName}
+                    </p>
+                  </Card>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </section>
   );
