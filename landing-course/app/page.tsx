@@ -6,6 +6,7 @@ import { ContactFooter } from "./components/ContactFooter";
 import { FaqSection } from "./components/FaqSection";
 import { DentistSection } from "./components/DentistSection";
 import { ProofSection } from "./components/ProofSection";
+import {ContactSection} from "./components/ContactSection";
 
 
 
@@ -23,6 +24,7 @@ export default function Home() {
         <DentistSection />
         
         <FaqSection />
+        <ContactSection />
       </main>
       <ContactFooter />
     </div>
