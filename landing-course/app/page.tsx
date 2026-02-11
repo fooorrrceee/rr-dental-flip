@@ -5,6 +5,8 @@ import { ServicesSection } from "./components/ServicesSection";
 import { ContactFooter } from "./components/ContactFooter";
 import { FaqSection } from "./components/FaqSection";
 import { DentistSection } from "./components/DentistSection";
+import { ProofSection } from "./components/ProofSection";
+
 
 
 
@@ -15,8 +17,11 @@ export default function Home() {
       <main>
         <Hero />
         <AboutSection />
-        <DentistSection />
+        <ProofSection />
         <ServicesSection />
+        
+        <DentistSection />
+        
         <FaqSection />
       </main>
       <ContactFooter />

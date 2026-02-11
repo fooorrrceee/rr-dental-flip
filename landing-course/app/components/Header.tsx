@@ -34,11 +34,23 @@ export function Header() {
               </a>
             </li>
             <li>
+              <a href="#proof" className="hover:text-sky-600">
+                Why Trust Us?
+              </a>
+            </li>
+            <li>
               <a href="#services" className="hover:text-sky-600">
                 Services
               </a>
             </li>
+            <li></li>
             <li>
+              <a href="#team" className="hover:text-sky-600">
+                Our Team
+              </a>
+            </li>
+            <li>
+            
               <a href="#faq" className="hover:text-sky-600">
                 FAQ
               </a>
@@ -107,11 +119,29 @@ export function Header() {
             </li>
             <li>
               <a
+                href="#proof"
+                onClick={closeMenu}
+                className="block py-1.5 hover:text-sky-600"
+              >
+                Why Trust Us?
+              </a>
+            </li>
+            <li>
+              <a
                 href="#services"
                 onClick={closeMenu}
                 className="block py-1.5 hover:text-sky-600"
               >
                 Services
+              </a>
+            </li>
+            <li>
+              <a
+                href="#team"
+                onClick={closeMenu}
+                className="block py-1.5 hover:text-sky-600"
+              >
+                Our Team
               </a>
             </li>
             <li>
