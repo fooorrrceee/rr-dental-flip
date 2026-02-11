@@ -4,6 +4,32 @@ import {
   CardTitle,
   CardContent,
 } from "@/components/ui/card";
+
+type Service = {
+  name: string;
+  description: string;
+  highlight?: string;
+};
+
+const services: Service[] = [
+  {
+    name: "Child dentistry",
+    description: "Gentle care focused on building healthy habits early.",
+    highlight: "Kid-friendly",
+  },
+  {
+    name: "Orthodontics",
+    description: "Teeth alignment options for teens and adults.",
+    highlight: "Braces & aligners",
+  },
+  {
+    name: "Restorative care",
+    description: "Fillings, crowns, and dentures to restore function and comfort.",
+    highlight: "Restore chewing comfort",
+  },
+  // add more soon
+];
+
 export function ServicesSection() {
   return (
     <section
@@ -19,38 +45,25 @@ export function ServicesSection() {
           Our key services
         </h2>
         <div className="mt-6 grid gap-6 sm:grid-cols-3">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-base">Child dentistry</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-slate-600">
-                Gentle care focused on building healthy habits early.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-base">Orthodontics</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-slate-600">
-                Teeth alignment options for teens and adults.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-base">Restorative care</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-slate-600">
-                Fillings, crowns, and dentures to restore function and comfort.
-              </p>
-            </CardContent>
-          </Card>
+          {services.map((service) => (
+            <Card key={service.name}>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base">
+                  {service.name}
+                </CardTitle>
+                {service.highlight && (
+                  <p className="mt-1 text-xs font-medium text-emerald-600">
+                    {service.highlight}
+                  </p>
+                )}
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-slate-600">
+                  {service.description}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
       </div>
