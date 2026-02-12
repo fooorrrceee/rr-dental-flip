@@ -75,7 +75,15 @@ export function ContactSection() {
 
           {/* Right: simple enquiry form (template only for now) */}
           <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-            <form className="space-y-4">
+            <form className="space-y-4"
+            action="https://formspree.io/f/mreaejlq" 
+            method="POST">
+              <input
+                type="hidden"
+                name="_subject"
+                value="New enquiry from RS Puram dentist site"
+              />
+
               <div>
                 <label
                   htmlFor="name"
@@ -85,9 +93,11 @@ export function ContactSection() {
                 </label>
                 <Input
                   id="name"
+                  name="name"
                   type="text"
                   placeholder="Full name"
                   className="mt-1"
+                  required
                 />
               </div>
 
@@ -100,9 +110,11 @@ export function ContactSection() {
                 </label>
                 <Input
                   id="phone"
+                  name="phone"
                   type="tel"
                   placeholder="Mobile number"
                   className="mt-1"
+                  required
                 />
               </div>
 
@@ -115,9 +127,11 @@ export function ContactSection() {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={3}
                   className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500"
                   placeholder="Eg: Tooth pain, missing tooth, braces for child..."
+                  required
                 />
               </div>
 
