@@ -1,7 +1,42 @@
+"use client";
+
+import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 export function ContactSection() {
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">(
+    "idle",
+  );
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault(); // stop normal redirect
+
+    setStatus("submitting");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mreaejlq", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: formData,
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        form.reset(); // clear fields after success
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      setStatus("error");
+    }
+  }
+
   return (
     <section
       id="contact"
@@ -17,7 +52,8 @@ export function ContactSection() {
         </h2>
 
         <p className="mt-2 text-sm text-slate-600">
-          Call, WhatsApp, or send a quick message and we’ll help you choose a convenient time to visit the clinic.
+          Call, WhatsApp, or send a quick message and we’ll help you choose a convenient
+          time to visit the clinic.
         </p>
 
         <div className="mt-6 grid gap-8 md:grid-cols-2">
@@ -27,9 +63,7 @@ export function ContactSection() {
               <p className="font-semibold text-slate-900">
                 Sample Dental Clinic
               </p>
-              <p className="mt-1">
-                RS Puram, Coimbatore
-              </p>
+              <p className="mt-1">RS Puram, Coimbatore</p>
             </div>
 
             <div>
@@ -73,11 +107,10 @@ export function ContactSection() {
             </div>
           </div>
 
-          {/* Right: simple enquiry form (template only for now) */}
+          {/* Right: enquiry form with inline feedback */}
           <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-            <form className="space-y-4"
-            action="https://formspree.io/f/mreaejlq" 
-            method="POST">
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              {/* Hidden subject */}
               <input
                 type="hidden"
                 name="_subject"
@@ -135,13 +168,32 @@ export function ContactSection() {
                 />
               </div>
 
-              <Button type="submit" className="w-full">
-                Send message
+              <Button
+                type="submit"
+                className="w-full"
+                disabled={status === "submitting"}
+              >
+                {status === "submitting" ? "Sending..." : "Send message"}
               </Button>
 
-              <p className="text-xs text-slate-500">
-                We’ll get back during clinic hours to confirm a time or answer your question.
-              </p>
+              {status === "success" && (
+                <p className="text-xs text-emerald-600">
+                  Thanks, we’ve received your message. We’ll get back during clinic hours.
+                </p>
+              )}
+
+              {status === "error" && (
+                <p className="text-xs text-red-600">
+                  Something went wrong while sending your message. Please try again, or use
+                  the phone / WhatsApp details on the left.
+                </p>
+              )}
+
+              {status === "idle" && (
+                <p className="text-xs text-slate-500">
+                  We’ll get back during clinic hours to confirm a time or answer your question.
+                </p>
+              )}
             </form>
           </div>
         </div>
