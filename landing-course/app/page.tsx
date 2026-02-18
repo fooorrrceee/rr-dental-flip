@@ -6,7 +6,9 @@ import { ContactFooter } from "./components/ContactFooter";
 import { FaqSection } from "./components/FaqSection";
 import { DentistSection } from "./components/DentistSection";
 import { ProofSection } from "./components/ProofSection";
-import {ContactSection} from "./components/ContactSection";
+import { ContactSection } from "./components/ContactSection";
+import { dentistServices } from "./dentist-config";
+
 
 
 
@@ -19,7 +21,12 @@ export default function Home() {
         <Hero />
         <AboutSection />
         <ProofSection />
-        <ServicesSection />
+        <ServicesSection
+          title="Our key services"
+          intro="From everyday check-ups to advanced treatments, we help you deal with common dental problems in one clinic."
+          services={dentistServices}
+        />
+
         
         <DentistSection />
         
