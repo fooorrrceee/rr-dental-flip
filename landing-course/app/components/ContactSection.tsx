@@ -190,7 +190,7 @@ export function ContactSection() {
               )}
 
               {status === "idle" && (
-                <p className="text-xs text-slate-500">
+                <p className="text-xs text-slate-600">
                   We’ll get back during clinic hours to confirm a time or answer your question.
                 </p>
               )}

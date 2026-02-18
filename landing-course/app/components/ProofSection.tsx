@@ -59,7 +59,7 @@ export function ProofSection() {
               key={point.label}
               className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm"
             >
-              <p className="text-xs font-medium uppercase tracking-wide text-slate-500">
+              <p className="text-xs font-medium uppercase tracking-wide text-slate-600">
                 {point.label}
               </p>
               <p className="mt-1 text-base font-semibold text-slate-900">

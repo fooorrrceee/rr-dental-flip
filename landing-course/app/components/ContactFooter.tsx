@@ -19,7 +19,7 @@ export function ContactFooter() {
             clinic@example.com
           </a>
         </p>
-        <p className="mt-6 text-xs text-slate-400">
+        <p className="mt-6 text-xs text-slate-300">
           © 2026 Sample Dental Clinic.
         </p>
       </div>
