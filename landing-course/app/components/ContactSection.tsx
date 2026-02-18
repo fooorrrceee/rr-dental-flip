@@ -53,7 +53,7 @@ export function ContactSection() {
 
         <p className="mt-2 text-sm text-slate-600">
           Call, WhatsApp, or send a quick message and we’ll help you choose a convenient
-          time to visit the clinic.
+          time to visit our RS Puram, Coimbatore clinic.
         </p>
 
         <div className="mt-6 grid gap-8 md:grid-cols-2">

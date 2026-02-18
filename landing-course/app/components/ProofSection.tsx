@@ -47,7 +47,10 @@ export function ProofSection() {
         </h2>
 
         <p className="mt-2 text-sm text-slate-600">
-          Most patients want to know two things before booking: “Will they treat me gently?” and “Do they really know what they’re doing?” This is how we answer both.
+          Most patients in and around RS Puram want to know two things before booking:
+          “Will they listen to me and treat me gently?” 
+          and “Do they really know what they’re doing?”
+          This is how we answer both.
         </p>
 
         <div className="mt-6 grid gap-6 sm:grid-cols-2">

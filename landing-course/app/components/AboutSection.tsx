@@ -6,8 +6,8 @@ export function AboutSection() {
           About our clinic
         </h2>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-600">
-          We combine experienced specialists with a friendly environment to make
-          every visit as comfortable as possible.
+          We combine experienced specialists with a friendly environment in RS Puram, Coimbatore
+          to make every visit as comfortable as possible.
         </p>
       </div>
     </section>
