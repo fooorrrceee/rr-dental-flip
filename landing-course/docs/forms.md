@@ -5,7 +5,7 @@ This project uses **Formspree** as a simple form backend for the Contact section
 ## Current dev setup
 
 - Form service: Formspree (free plan)
-- Endpoint (dev only): `https://formspree.io/f/mreaexxx`
+- Endpoint (dev only): `https://formspree.io/f/mreaejlq`
 - Wired form: `app/components/ContactSection.tsx`
 
 The form sends these fields:
