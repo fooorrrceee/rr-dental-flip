@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Dentist in RS Puram, Coimbatore – Sample Dental Clinic",
     description:
       "Gentle, family-friendly dental care in RS Puram, Coimbatore. Check-ups, child dentistry, braces, root canals, implants, and more under one roof.",
-    url: "https://example.com", // placeholder; change when you deploy
+    url: "https://rr-dental-flip.dev.example.com", // placeholder; change when you deploy
     siteName: "Sample Dental Clinic",
     locale: "en_IN",
     type: "website",
