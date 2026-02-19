@@ -1,3 +1,5 @@
+import { SectionHeader } from "@/app/components/SectionHeader";
+
 type ProofPoint = {
   label: string;
   value: string;
@@ -39,19 +41,11 @@ export function ProofSection() {
       aria-labelledby="proof-heading"
     >
       <div className="mx-auto max-w-5xl px-4">
-        <h2
-          id="proof-heading"
-          className="text-2xl font-semibold text-slate-900"
-        >
-          What helps patients trust our clinic
-        </h2>
+        <SectionHeader
+          title="Why patients choose our clinic"
+          intro="Short explanation text you already had here."
+        />
 
-        <p className="mt-2 text-sm text-slate-600">
-          Most patients in and around RS Puram want to know two things before booking:
-          “Will they listen to me and treat me gently?” 
-          and “Do they really know what they’re doing?”
-          This is how we answer both.
-        </p>
 
         <div className="mt-6 grid gap-6 sm:grid-cols-2">
           {proofPoints.map((point) => (
