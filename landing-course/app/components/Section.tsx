@@ -6,7 +6,16 @@ type SectionProps = {
   background?: "white" | "muted";
   paddingY?: "normal" | "comfortable";
   children: React.ReactNode;
+  maxWidth?: "narrow" | "normal" | "wide" | "full";
 };
+
+const maxWidthClasses: Record<NonNullable<SectionProps["maxWidth"]>, string> = {
+  narrow: "max-w-3xl",
+  normal: "max-w-5xl",
+  wide: "max-w-6xl",
+  full: "max-w-none",
+};
+
 
 export function Section({
   id,
@@ -14,6 +23,7 @@ export function Section({
   background = "white",
   paddingY = "normal",
   children,
+  maxWidth = "normal",
 }: SectionProps) {
   const bgClass = background === "muted" ? "bg-slate-50" : "bg-white";
   const pyClass =
@@ -25,7 +35,7 @@ export function Section({
       className={`${bgClass} ${pyClass} scroll-mt-16`}
       aria-labelledby={ariaLabelledBy}
     >
-      <div className="mx-auto max-w-5xl px-4">
+      <div className="mx-auto ${maxWidthClasses[maxWidth]} px-4">
         {children}
       </div>
     </section>
