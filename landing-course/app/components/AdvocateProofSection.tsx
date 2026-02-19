@@ -1,6 +1,7 @@
 import { Section } from "@/app/components/Section";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { advocateProofPoints } from "@/app/advocate/advocate-config";
+import { SectionHeader } from "@/app/components/SectionHeader";
 
 export function AdvocateProofSection() {
   return (
@@ -10,16 +11,11 @@ export function AdvocateProofSection() {
       background="white"
       paddingY="normal"
     >
-      <h2
-        id="advocate-proof-heading"
-        className="text-2xl font-semibold text-slate-900"
-      >
-        Why clients choose our chambers
-      </h2>
-      <p className="mt-2 text-sm text-slate-600">
-        Many people feel unsure or anxious before speaking to a lawyer. These are
-        some of the reasons clients say they feel comfortable working with us.
-      </p>
+      <SectionHeader
+        title="Why clients choose our chambers"
+        intro="Many people feel unsure or anxious before speaking to a lawyer. These are some of the reasons clients say they feel comfortable working with us."
+      />
+
 
       <div className="mt-6 grid gap-6 sm:grid-cols-2">
         {advocateProofPoints.map((point) => (
