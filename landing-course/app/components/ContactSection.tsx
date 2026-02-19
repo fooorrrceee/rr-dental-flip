@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { ContactIntro } from "@/app/components/ContactIntro";
+
 
 export function ContactSection() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">(
@@ -44,17 +46,11 @@ export function ContactSection() {
       aria-labelledby="contact-heading"
     >
       <div className="mx-auto max-w-5xl px-4">
-        <h2
-          id="contact-heading"
-          className="text-2xl font-semibold text-slate-900"
-        >
-          Book an appointment or ask a question
-        </h2>
-
-        <p className="mt-2 text-sm text-slate-600">
-          Call, WhatsApp, or send a quick message and we’ll help you choose a convenient
-          time to visit our RS Puram, Coimbatore clinic.
-        </p>
+        <ContactIntro
+          title="Book an appointment or ask a question"
+          intro="Leave your details and a brief note, and we’ll call you back to confirm a time that works for you."
+          note="You can also call or WhatsApp us directly using the details below if you prefer."
+        />
 
         <div className="mt-6 grid gap-8 md:grid-cols-2">
           {/* Left: contact details */}
