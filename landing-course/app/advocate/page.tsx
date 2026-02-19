@@ -1,6 +1,7 @@
 import { Header } from "../components/Header";
 import { ContactFooter } from "../components/ContactFooter";
 import { ServicesSection } from "../components/ServicesSection";
+import { AdvocateProofSection } from "../components/AdvocateProofSection";
 import { advocateServices } from "./advocate-config";
 import { AdvocateHero } from "../components/AdvocateHero";
 
@@ -18,6 +19,7 @@ export default function AdvocatePage() {
           intro="Practical legal help for common issues faced by individuals and families in RS Puram and across Coimbatore."
           services={advocateServices}
         />
+        <AdvocateProofSection />
 
         {/* For now, reuse the same FAQ and Contact patterns if you like later */}
       </main>
