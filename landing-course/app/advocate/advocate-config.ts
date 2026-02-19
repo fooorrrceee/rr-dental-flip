@@ -52,3 +52,10 @@ export const advocateServices: Service[] = [
     priority: "additional",
   },
 ];
+
+export const advocateHero = {
+  heading: "Clear legal guidance in RS Puram, Coimbatore",
+  subheading:
+    "Single advocate or small firm helping individuals and families with property, family, and civil matters, explained in plain language.",
+  primaryCta: "Book a consultation",
+};
