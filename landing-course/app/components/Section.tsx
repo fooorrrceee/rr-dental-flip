@@ -35,7 +35,7 @@ export function Section({
       className={`${bgClass} ${pyClass} scroll-mt-16`}
       aria-labelledby={ariaLabelledBy}
     >
-      <div className="mx-auto ${maxWidthClasses[maxWidth]} px-4">
+      <div className={`mx-auto ${maxWidthClasses[maxWidth]} px-4`}>
         {children}
       </div>
     </section>
