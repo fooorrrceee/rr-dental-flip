@@ -4,6 +4,7 @@ import { ServicesSection } from "../components/ServicesSection";
 import { AdvocateProofSection } from "../components/AdvocateProofSection";
 import { advocateServices } from "./advocate-config";
 import { AdvocateHero } from "../components/AdvocateHero";
+import { AdvocateContactSection } from "../components/AdvocateContactSection";
 
 export default function AdvocatePage() {
   return (
@@ -22,6 +23,7 @@ export default function AdvocatePage() {
         <AdvocateProofSection />
 
         {/* For now, reuse the same FAQ and Contact patterns if you like later */}
+        <AdvocateContactSection />
       </main>
       <ContactFooter />
     </div>
