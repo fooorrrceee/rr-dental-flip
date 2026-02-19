@@ -5,6 +5,7 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import type { Service } from "@/app/dentist-config";
+import {Section} from "@/app/components/Section";
 
 type ServicesSectionProps = {
   title: string;
@@ -21,10 +22,11 @@ export function ServicesSection({ title, intro, services }: ServicesSectionProps
   );
 
   return (
-    <section
+    <Section
       id="services"
-      className="bg-slate-50 py-12 sm:py-16 scroll-mt-16"
-      aria-labelledby="services-heading"
+      ariaLabelledBy="services-heading"
+      background="muted"
+      paddingY="normal"
     >
       <div className="mx-auto max-w-5xl px-4">
         <h2
@@ -87,6 +89,6 @@ export function ServicesSection({ title, intro, services }: ServicesSectionProps
           </div>
         )}
       </div>
-    </section>
+    </Section>
   );
 }
