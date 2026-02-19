@@ -59,3 +59,36 @@ export const advocateHero = {
     "Single advocate or small firm helping individuals and families with property, family, and civil matters, explained in plain language.",
   primaryCta: "Book a consultation",
 };
+
+export type ProofPoint = {
+  label: string;
+  value: string;
+  description: string;
+};
+
+export const advocateProofPoints: ProofPoint[] = [
+  {
+    label: "Experience",
+    value: "10+ years in practice",
+    description:
+      "Handling property, family, and civil matters for individuals and families in and around RS Puram.",
+  },
+  {
+    label: "Court work",
+    value: "Regular court appearances",
+    description:
+      "Experience appearing before local courts so you understand what to expect at each stage of your case.",
+  },
+  {
+    label: "Clarity",
+    value: "Plain-language advice",
+    description:
+      "We explain options, likely timelines, and costs in simple terms before you decide on a legal step.",
+  },
+  {
+    label: "Access",
+    value: "RS Puram, Coimbatore",
+    description:
+      "Easier to attend meetings and court dates when your advocate is based close to where you live or work.",
+  },
+];
