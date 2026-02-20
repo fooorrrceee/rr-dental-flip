@@ -12,17 +12,31 @@ import {
 const faqs = [
   {
     question: "Do you treat kids?",
-    answer: "Yes, we offer gentle dental care for children of all ages.",
+    answer:
+      "Yes, we offer gentle dental care for children of all ages, with extra time for first visits so they can get comfortable.",
   },
   {
     question: "Do you accept insurance?",
-    answer: "We work with most major insurers and help with paperwork.",
+    answer:
+      "We work with most major insurers and can help you understand what is covered before starting treatment.",
   },
   {
     question: "How often should I visit the dentist?",
-    answer: "Most patients benefit from a check-up and cleaning every 6 months.",
+    answer:
+      "Most patients benefit from a check-up and cleaning every 6 months, but we’ll recommend a schedule based on your teeth and gums.",
+  },
+  {
+    question: "I’m nervous about dental treatment. Can you help with that?",
+    answer:
+      "Yes. We explain each step in simple language, check in with you during treatment, and can break work into shorter visits so you feel more in control.",
+  },
+  {
+    question: "What if I can’t decide right away after the consultation?",
+    answer:
+      "That’s okay. We’ll give you a written summary of options and costs so you can think about it at home and contact us when you’re ready.",
   },
 ];
+
 
 export function FaqSection() {
 
