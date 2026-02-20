@@ -43,10 +43,11 @@ export function AdvocateContactSection() {
     >
       <div className="mx-auto max-w-5xl px-4">
         <ContactIntro
-          title="Schedule a consultation or clarify a legal doubt"
-          intro="Share a few details about your situation, and we’ll contact you to discuss options and possible next steps."
-          note="If your matter is urgent, you can also call or WhatsApp us directly using the details below."
+          title="Schedule a confidential consultation"
+          intro="Share a few details about your situation, and we’ll get in touch to outline your options, likely timelines, and next steps before you decide on any legal action."
+          note="If your matter is urgent, call or WhatsApp us directly using the details below. Initial discussions focus on understanding your case, not pressuring you into a decision."
         />
+
 
         <div className="mt-6 grid gap-8 md:grid-cols-2">
           {/* Left: contact details */}
