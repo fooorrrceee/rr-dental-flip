@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ContactIntro } from "@/app/components/ContactIntro";
+import { trackClick } from "@/app/lib/analytics";
+
 
 
 export function ContactSection() {
@@ -67,6 +69,9 @@ export function ContactSection() {
               <a
                 href="tel:+919585822338"
                 className="mt-1 inline-block text-sky-700 underline"
+                onClick={() =>
+                  trackClick({ name: "dentist_phone_click", context: "contact_section" })
+                }
               >
                 +91 95858 22338
               </a>
@@ -77,6 +82,9 @@ export function ContactSection() {
               <a
                 href="https://wa.me/919585822338"
                 className="mt-1 inline-block text-sky-700 underline"
+                onClick={() =>
+                  trackClick({ name: "dentist_whatsapp_click", context: "contact_section" })
+                }
               >
                 Message on WhatsApp
               </a>
