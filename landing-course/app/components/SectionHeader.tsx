@@ -21,12 +21,12 @@ export function SectionHeader({
   return (
     <div className={cn("flex flex-col gap-2", alignment, className)}>
       {eyebrow ? (
-        <p className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+        <p className="text-xs font-semibold uppercase tracking-wide text-sky-600">
           {eyebrow}
         </p>
       ) : null}
 
-      <h2 className="text-2xl font-semibold text-slate-900">
+      <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
         {title}
       </h2>
 
