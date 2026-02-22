@@ -74,3 +74,25 @@ export const dentistServices: Service[] = [
     priority: "additional",
   },
 ];
+
+// app/dentist-config.ts
+
+export const dentistSiteInfo = {
+  business: {
+    name: "Sample Dental Clinic",
+    tagline: "Gentle dental care in RS Puram",
+    niche: "dentist",
+    location: {
+      area: "RS Puram",
+      city: "Coimbatore",
+      country: "India",
+    },
+  },
+  contact: {
+    phone: "+91 95858 22338",
+    whatsapp: "+91 95858 22338",
+    email: "clinic@example.com",
+    googleMapsUrl: "https://maps.google.com/?q=Sample+Dental+Clinic+RS+Puram",
+  },
+};
+
