@@ -75,9 +75,10 @@ export function Tabs({
         aria-labelledby={`tab-${activeTab.id}`}
         className="mt-6 rounded-lg border border-slate-100 bg-slate-50 px-4 py-4 sm:px-5 sm:py-5"
       >
-        <h2 className="text-base font-semibold text-slate-900 sm:text-lg">
+        <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
           {activeTab.title}
         </h2>
+
         <p className="mt-2 text-sm text-slate-700 sm:text-base">
           {activeTab.body}
         </p>
