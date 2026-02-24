@@ -13,8 +13,15 @@ export type ServicesSectionDesignConfig = {
   background: SectionBackgroundVariant;
 };
 
+
+
+export type ProofSectionDesignConfig = {
+  background: SectionBackgroundVariant;
+};
+
 export type BusinessSiteDesignConfig = {
   hero: HeroDesignConfig;
   servicesSection: ServicesSectionDesignConfig;
-  // later: proofSection, faqSection, contactSection, etc.
+  proofSection: ProofSectionDesignConfig; // NEW
+  // later: faqSection, contactSection, etc.
 };
