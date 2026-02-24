@@ -22,18 +22,23 @@ export function AboutSection({ content, design }: AboutSectionProps) {
 
   return (
     <Section id="about" className={sectionBgClass}>
-      <div className="mx-auto max-w-3xl px-4">
-        <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-          {title}
-        </h2>
-        {intro && (
-          <p className="mt-2 text-base text-slate-700 sm:text-lg">
-            {intro}
+      <div className="mx-auto max-w-5xl px-4">
+        <div className="mb-6 space-y-3 text-center">
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+            {title}
+          </h2>
+          {intro && (
+            <p className="text-base text-slate-700 sm:text-lg">
+              {intro}
+            </p>
+          )}
+        </div>
+
+        <div className="mx-auto max-w-3xl">
+          <p className="text-sm text-slate-700 sm:text-base leading-relaxed text-left">
+            {body}
           </p>
-        )}
-        <p className="mt-4 text-sm text-slate-700 sm:text-base leading-relaxed">
-          {body}
-        </p>
+        </div>
       </div>
     </Section>
   );
