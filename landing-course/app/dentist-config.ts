@@ -204,25 +204,35 @@ export const dentistContentConfig: BusinessSiteContentConfig = {
     title: "Book an appointment or ask a question",
     intro:
       "Share a few details and we’ll call or message you back during clinic hours to confirm a time.",
-    addressLines: [
-      "Sample Dental Clinic",
-      "RS Puram, Coimbatore",
-      "Tamil Nadu, India",
-    ],
+    note:
+      "You can also call or WhatsApp us directly using the details below if you prefer.",
+    clinicName: "Sample Dental Clinic",
+    locationLine: "RS Puram, Coimbatore",
     channels: dentistContactChannels,
     form: {
       heading: "Send us a quick message",
       subheading:
         "We’ll get back to you as soon as we can during working hours.",
-      formspreeEndpoint: "https://formspree.io/f/your-id-here", // TODO: replace with real ID
+      formspreeEndpoint: "https://formspree.io/f/mreaejlq", // TODO: replace with real ID
       submitLabel: "Send message",
       successMessage:
         "Thank you for reaching out. We’ll get back to you shortly.",
       errorMessage:
         "Something went wrong. Please try again or contact us directly.",
+      idleMessage:
+        "We’ll get back during clinic hours to confirm a time or answer your question.",
+      subject: "New enquiry from RS Puram dentist site",
     },
   },
+  aboutSection: {
+    title: "A clinic built for everyday dental worries",
+    intro:
+      "We focus on clear explanations, gentle treatment, and practical plans that fit your routine.",
+    body:
+      "At Sample Dental Clinic, we see everything from routine check-ups and children’s visits to braces, root canals, and missing teeth every week. Our goal is to make each visit feel predictable and manageable: we explain your options in simple language, suggest what truly needs attention now versus later, and help you plan treatment that fits your schedule and budget.",
+  },
 };
+
 
 export const dentistDesignConfig: BusinessSiteDesignConfig = {
   hero: {
@@ -239,6 +249,9 @@ export const dentistDesignConfig: BusinessSiteDesignConfig = {
     background: "soft",
   },
   contactSection: {
-    background: "default",
+    background: "soft",
+  },
+  aboutSection: {
+    background: "default", // keep white; or "soft" if you want a band
   },
 };

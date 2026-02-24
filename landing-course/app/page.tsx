@@ -15,7 +15,7 @@ import {
 } from "./dentist-config";
 
 export default function Home() {
-  const { hero, servicesSection, proofSection,faqSection, contact } = dentistContentConfig;
+  const { hero, servicesSection, proofSection,faqSection,contactSection, contact } = dentistContentConfig;
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900">
@@ -47,7 +47,10 @@ export default function Home() {
         />
 
 
-        <ContactSection />
+        <ContactSection
+        content={contactSection}
+        design={dentistDesignConfig.contactSection}
+      />
       </main>
       <ContactFooter />
     </div>

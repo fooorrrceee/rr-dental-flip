@@ -1,3 +1,4 @@
+// app/components/ContactSection.tsx
 "use client";
 
 import { useState } from "react";
@@ -5,24 +6,42 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ContactIntro } from "@/app/components/ContactIntro";
 import { trackClick } from "@/app/lib/analytics";
+import type {
+  ContactSectionContentConfig,
+  ContactChannel,
+} from "@/app/site-content-config";
+import type { ContactSectionDesignConfig } from "@/app/site-design-config";
 
+type ContactSectionProps = {
+  content: ContactSectionContentConfig;
+  design: ContactSectionDesignConfig;
+};
 
+export function ContactSection({ content, design }: ContactSectionProps) {
+  const { title, intro, note, clinicName, locationLine, channels=[], form 
+} = content;
 
-export function ContactSection() {
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">(
-    "idle",
-  );
+  const sectionBgClass =
+    design.background === "soft"
+      ? "bg-slate-50"
+      : design.background === "emphasis"
+      ? "bg-slate-900"
+      : "bg-white";
+
+  const [status, setStatus] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault(); // stop normal redirect
+    event.preventDefault();
 
     setStatus("submitting");
 
-    const form = event.currentTarget;
-    const formData = new FormData(form);
+    const formElement = event.currentTarget;
+    const formData = new FormData(formElement);
 
     try {
-      const response = await fetch("https://formspree.io/f/mreaejlq", {
+      const response = await fetch(form.formspreeEndpoint, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -32,11 +51,11 @@ export function ContactSection() {
 
       if (response.ok) {
         setStatus("success");
-        form.reset(); // clear fields after success
+        formElement.reset();
       } else {
         setStatus("error");
       }
-    } catch (error) {
+    } catch {
       setStatus("error");
     }
   }
@@ -44,82 +63,94 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="bg-slate-50 py-12 sm:py-16 scroll-mt-16"
+      className={`${sectionBgClass} py-12 sm:py-16 scroll-mt-16`}
       aria-labelledby="contact-heading"
     >
       <div className="mx-auto max-w-5xl px-4">
         <ContactIntro
-          title="Book an appointment or ask a question"
-          intro="Leave your details and a brief note, and we’ll call you back to confirm a time that works for you."
-          note="You can also call or WhatsApp us directly using the details below if you prefer."
+          title={title}
+          intro={intro ?? ""}
+          note={note}
         />
 
         <div className="mt-6 grid gap-8 md:grid-cols-2">
           {/* Left: contact details */}
           <div className="space-y-4 text-sm text-slate-700">
             <div>
-              <p className="font-semibold text-slate-900">
-                Sample Dental Clinic
-              </p>
-              <p className="mt-1">RS Puram, Coimbatore</p>
+              {clinicName && (
+                <p className="font-semibold text-slate-900">
+                  {clinicName}
+                </p>
+              )}
+              {locationLine && (
+                <p className="mt-1">{locationLine}</p>
+              )}
             </div>
 
-            <div>
-              <p className="font-medium text-slate-900">Phone</p>
-              <a
-                href="tel:+919585822338"
-                className="mt-1 inline-block text-sky-700 underline"
-                onClick={() =>
-                  trackClick({ name: "dentist_phone_click", context: "contact_section" })
-                }
-              >
-                +91 95858 22338
-              </a>
-            </div>
+            {channels.map((channel: ContactChannel) => {
+              const commonLabel =
+                channel.type === "phone"
+                  ? "Phone"
+                  : channel.type === "whatsapp"
+                  ? "WhatsApp"
+                  : channel.type === "email"
+                  ? "Email"
+                  : channel.type === "location"
+                  ? "Location"
+                  : channel.label;
 
-            <div>
-              <p className="font-medium text-slate-900">WhatsApp</p>
-              <a
-                href="https://wa.me/919585822338"
-                className="mt-1 inline-block text-sky-700 underline"
-                onClick={() =>
-                  trackClick({ name: "dentist_whatsapp_click", context: "contact_section" })
-                }
-              >
-                Message on WhatsApp
-              </a>
-            </div>
+              const displayValue =
+                channel.type === "phone" || channel.type === "email"
+                  ? channel.value
+                  : channel.value;
 
-            <div>
-              <p className="font-medium text-slate-900">Email</p>
-              <a
-                href="mailto:clinic@example.com"
-                className="mt-1 inline-block text-sky-700 underline"
-              >
-                clinic@example.com
-              </a>
-            </div>
+              const onClick =
+                channel.type === "phone"
+                  ? () =>
+                      trackClick({
+                        name: "dentist_phone_click",
+                        context: "contact_section",
+                      })
+                  : channel.type === "whatsapp"
+                  ? () =>
+                      trackClick({
+                        name: "dentist_whatsapp_click",
+                        context: "contact_section",
+                      })
+                  : undefined;
 
-            <div>
-              <p className="font-medium text-slate-900">Location</p>
-              <a
-                href="https://maps.google.com"
-                className="mt-1 inline-block text-sky-700 underline"
-              >
-                View on Google Maps
-              </a>
-            </div>
+              return (
+                <div key={channel.label}>
+                  <p className="font-medium text-slate-900">
+                    {commonLabel}
+                  </p>
+                  {channel.href ? (
+                    <a
+                      href={channel.href}
+                      className="mt-1 inline-block text-sky-700 underline"
+                      onClick={onClick}
+                    >
+                      {displayValue}
+                    </a>
+                  ) : (
+                    <p className="mt-1">{displayValue}</p>
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           {/* Right: enquiry form with inline feedback */}
           <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
             <form className="space-y-4" onSubmit={handleSubmit}>
               {/* Hidden subject */}
-              <input
-                type="hidden"
-                name="_subject"
-                value="New enquiry from RS Puram dentist site"
-              />
+              {form.subject && (
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value={form.subject}
+                />
+              )}
 
               <div>
                 <label
@@ -177,25 +208,24 @@ export function ContactSection() {
                 className="w-full"
                 disabled={status === "submitting"}
               >
-                {status === "submitting" ? "Sending..." : "Send message"}
+                {status === "submitting" ? "Sending..." : form.submitLabel}
               </Button>
 
               {status === "success" && (
                 <p className="text-xs text-emerald-600">
-                  Thanks, we’ve received your message. We’ll get back during clinic hours.
+                  {form.successMessage}
                 </p>
               )}
 
               {status === "error" && (
                 <p className="text-xs text-red-600">
-                  Something went wrong while sending your message. Please try again, or use
-                  the phone / WhatsApp details on the left.
+                  {form.errorMessage}
                 </p>
               )}
 
-              {status === "idle" && (
+              {status === "idle" && form.idleMessage && (
                 <p className="text-xs text-slate-600">
-                  We’ll get back during clinic hours to confirm a time or answer your question.
+                  {form.idleMessage}
                 </p>
               )}
             </form>

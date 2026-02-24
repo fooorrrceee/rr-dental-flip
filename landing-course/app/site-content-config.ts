@@ -86,13 +86,17 @@ export type ContactFormConfig = {
   submitLabel: string;
   successMessage: string;
   errorMessage: string;
+  idleMessage?: string;
+  subject?: string; // for hidden _subject field
 };
 
 export type ContactSectionContentConfig = {
   title: string;
   intro?: string;
-  addressLines?: string[];         // simple address block
-  channels: ContactChannel[];      // phone, WhatsApp, email, map, etc.
+  note?: string; // for the ContactIntro note
+  clinicName?: string;
+  locationLine?: string;
+  channels: ContactChannel[];
   form: ContactFormConfig;
 };
 
