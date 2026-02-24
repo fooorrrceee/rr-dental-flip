@@ -1,14 +1,14 @@
 // app/dentist-config.ts
+import type {
+  BusinessSiteContentConfig,
+  Service,
+} from "./site-content-config";
+import type { BusinessSiteDesignConfig } from "./site-design-config";
 
-export type Service = {
-  headline: string;      // patient-facing problem/outcome
-  technicalName: string; // clinical/procedure name
-  description: string;
-  highlight?: string;
-  priority?: "core" | "additional";
-};
+// Re-export Service so existing imports can be kept for now if needed
+export type { Service } from "./site-content-config";
 
-export const dentistServices: Service[] = [
+const dentistServices: Service[] = [
   {
     headline: "Gentle dental visits for children",
     technicalName: "Child dentistry",
@@ -75,9 +75,7 @@ export const dentistServices: Service[] = [
   },
 ];
 
-// app/dentist-config.ts
-
-export const dentistSiteInfo = {
+export const dentistContentConfig: BusinessSiteContentConfig = {
   business: {
     name: "Sample Dental Clinic",
     tagline: "Gentle dental care in RS Puram",
@@ -92,7 +90,34 @@ export const dentistSiteInfo = {
     phone: "+91 95858 22338",
     whatsapp: "+91 95858 22338",
     email: "clinic@example.com",
-    googleMapsUrl: "https://maps.google.com/?q=Sample+Dental+Clinic+RS+Puram",
+    googleMapsUrl:
+      "https://maps.google.com/?q=Sample+Dental+Clinic+RS+Puram",
+  },
+  hero: {
+    eyebrow: "Dentist in RS Puram, Coimbatore",
+    title:
+      "Gentle dental care in RS Puram for everyday problems and long-term smile health",
+    subtitle:
+      "From toothaches and cleaning to braces and missing teeth, we focus on clear explanations, comfort, and treatment plans that fit your daily life.",
+    primaryCtaLabel: "Book an appointment or ask a question",
+    primaryCtaHref: "#contact",
+    imageAlt:
+      "Dentist gently checking a patient's teeth at Sample Dental Clinic in RS Puram",
+  },
+  servicesSection: {
+    title: "Our key services",
+    intro:
+      "From everyday check-ups to advanced treatments, we help you deal with common dental problems in one clinic.",
+    services: dentistServices,
   },
 };
 
+export const dentistDesignConfig: BusinessSiteDesignConfig = {
+  hero: {
+    layout: "split",       // matches your current hero with text + image area
+    background: "soft",    // soft tinted background
+  },
+  servicesSection: {
+    background: "default", // keep white background for services
+  },
+};
