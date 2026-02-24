@@ -2,6 +2,8 @@
 import type {
   BusinessSiteContentConfig,
   Service,
+  ProofSectionContentConfig,
+  ProofItem,
 } from "./site-content-config";
 import type { BusinessSiteDesignConfig } from "./site-design-config";
 
@@ -75,6 +77,25 @@ const dentistServices: Service[] = [
   },
 ];
 
+
+const dentistProofHighlights: ProofItem[] = [
+  {
+    label: "Years of experience",
+    value: "10+ years",
+    description: "Caring for families in and around RS Puram.",
+  },
+  {
+    label: "Patients treated",
+    value: "5,000+",
+    description: "Check-ups, fillings, braces, implants, and more.",
+  },
+  {
+    label: "Emergency response",
+    value: "Same-day slots",
+    description: "For severe pain or sudden dental problems.",
+  },
+];
+
 export const dentistContentConfig: BusinessSiteContentConfig = {
   business: {
     name: "Sample Dental Clinic",
@@ -110,6 +131,12 @@ export const dentistContentConfig: BusinessSiteContentConfig = {
       "From everyday check-ups to advanced treatments, we help you deal with common dental problems in one clinic.",
     services: dentistServices,
   },
+  proofSection: {
+    title: "Why local families trust us",
+    intro:
+      "We combine gentle care, clear explanations, and consistent follow-ups so your dental visits feel manageable, not stressful.",
+    highlights: dentistProofHighlights,
+  },
 };
 
 export const dentistDesignConfig: BusinessSiteDesignConfig = {
@@ -119,5 +146,8 @@ export const dentistDesignConfig: BusinessSiteDesignConfig = {
   },
   servicesSection: {
     background: "default", // keep white background for services
+  },
+  proofSection: {
+    background: "default", // we can flip this to "soft" later if you want alternation
   },
 };
