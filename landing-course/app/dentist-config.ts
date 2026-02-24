@@ -5,6 +5,7 @@ import type {
   ProofSectionContentConfig,
   ProofItem,
   FaqItem,
+  ContactChannel,
 } from "./site-content-config";
 import type { BusinessSiteDesignConfig } from "./site-design-config";
 
@@ -120,6 +121,38 @@ const dentistFaqItems: FaqItem[] = [
   },
 ];
 
+const dentistContactChannels: ContactChannel[] = [
+  {
+    type: "phone",
+    label: "Call us",
+    value: "+91 95858 22338",
+    href: "tel:+919585822338",
+    icon: "phone",
+  },
+  {
+    type: "whatsapp",
+    label: "WhatsApp",
+    value: "+91 95858 22338",
+    href: "https://wa.me/919585822338",
+    icon: "whatsapp",
+  },
+  {
+    type: "email",
+    label: "Email",
+    value: "clinic@example.com",
+    href: "mailto:clinic@example.com",
+    icon: "email",
+  },
+  {
+    type: "location",
+    label: "Find us on Google Maps",
+    value: "RS Puram, Coimbatore",
+    href:
+      "https://maps.google.com/?q=Sample+Dental+Clinic+RS+Puram",
+    icon: "location",
+  },
+];
+
 export const dentistContentConfig: BusinessSiteContentConfig = {
   business: {
     name: "Sample Dental Clinic",
@@ -167,6 +200,28 @@ export const dentistContentConfig: BusinessSiteContentConfig = {
       "If you’re unsure about something, you’re not alone. Here are answers to questions we hear often in the clinic.",
     items: dentistFaqItems,
   },
+  contactSection: {
+    title: "Book an appointment or ask a question",
+    intro:
+      "Share a few details and we’ll call or message you back during clinic hours to confirm a time.",
+    addressLines: [
+      "Sample Dental Clinic",
+      "RS Puram, Coimbatore",
+      "Tamil Nadu, India",
+    ],
+    channels: dentistContactChannels,
+    form: {
+      heading: "Send us a quick message",
+      subheading:
+        "We’ll get back to you as soon as we can during working hours.",
+      formspreeEndpoint: "https://formspree.io/f/your-id-here", // TODO: replace with real ID
+      submitLabel: "Send message",
+      successMessage:
+        "Thank you for reaching out. We’ll get back to you shortly.",
+      errorMessage:
+        "Something went wrong. Please try again or contact us directly.",
+    },
+  },
 };
 
 export const dentistDesignConfig: BusinessSiteDesignConfig = {
@@ -181,6 +236,9 @@ export const dentistDesignConfig: BusinessSiteDesignConfig = {
     background: "default",
   },
   faqSection: {
-    background: "soft", // slightly tinted band to separate FAQ
+    background: "soft",
+  },
+  contactSection: {
+    background: "default",
   },
 };
