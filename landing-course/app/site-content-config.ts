@@ -100,13 +100,42 @@ export type ContactSectionContentConfig = {
   form: ContactFormConfig;
 };
 
+
+
+export type AboutSectionContentConfig = {
+  title: string;
+  intro?: string;    // short 1–2 line intro
+  body: string;      // main paragraph(s), can include line breaks
+};
+
+
+
+export type HighlightItem = {
+  title: string;          // e.g. "Dr. Arjun Menon"
+  subtitle?: string;      // e.g. "Consultant Dentist"
+  description?: string;   // 2–3 line bio or detail
+  meta?: string;          // e.g. "10+ years experience"
+  tags?: string[];        // optional keywords
+  imageUrl?: string;      // optional portrait or icon
+};
+
+export type HighlightsSectionContentConfig = {
+  sectionId?: string;     // e.g. "team", "experts"
+  title: string;
+  intro?: string;
+  items: HighlightItem[];
+};
+
 export type BusinessSiteContentConfig = {
   business: BusinessInfo;
-  contact: BusinessContact;              // core NAP fields
+  contact: BusinessContact;
   hero: HeroContentConfig;
+  aboutSection: AboutSectionContentConfig;
   servicesSection: ServicesSectionContentConfig;
   proofSection: ProofSectionContentConfig;
   faqSection: FaqSectionContentConfig;
-  contactSection: ContactSectionContentConfig; // NEW
+  contactSection: ContactSectionContentConfig;
+  primaryHighlightsSection?: HighlightsSectionContentConfig; // NEW
 };
+
 
