@@ -1,15 +1,40 @@
-export function AboutSection() {
+// app/components/AboutSection.tsx
+import { Section } from "@/app/components/Section";
+import type {
+  AboutSectionContentConfig,
+} from "@/app/site-content-config";
+import type { AboutSectionDesignConfig } from "@/app/site-design-config";
+
+type AboutSectionProps = {
+  content: AboutSectionContentConfig;
+  design: AboutSectionDesignConfig;
+};
+
+export function AboutSection({ content, design }: AboutSectionProps) {
+  const { title, intro, body } = content;
+
+  const sectionBgClass =
+    design.background === "soft"
+      ? "bg-sky-50"
+      : design.background === "emphasis"
+      ? "bg-sky-800"
+      : "bg-white";
+
   return (
-    <section id="about" className="py-12 sm:py-16 scroll-mt-16" aria-labelledby="about-heading">
-      <div className="mx-auto max-w-5xl px-4">
-        <h2 className="text-2xl font-semibold text-slate-900">
-          About our clinic
+    <Section id="about" className={sectionBgClass}>
+      <div className="mx-auto max-w-3xl px-4">
+        <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+          {title}
         </h2>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-600">
-          We combine experienced specialists with a friendly environment in RS Puram, Coimbatore
-          to make every visit as comfortable as possible.
+        {intro && (
+          <p className="mt-2 text-base text-slate-700 sm:text-lg">
+            {intro}
+          </p>
+        )}
+        <p className="mt-4 text-sm text-slate-700 sm:text-base leading-relaxed">
+          {body}
         </p>
       </div>
-    </section>
+    </Section>
   );
 }

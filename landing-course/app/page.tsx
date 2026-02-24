@@ -5,9 +5,9 @@ import { AboutSection } from "./components/AboutSection";
 import { ServicesSection } from "./components/ServicesSection";
 import { ContactFooter } from "./components/ContactFooter";
 import { FaqSection } from "./components/FaqSection";
-import { DentistSection } from "./components/DentistSection";
 import { ProofSection } from "./components/ProofSection";
 import { ContactSection } from "./components/ContactSection";
+// HighlightsSection will be added later
 
 import {
   dentistContentConfig,
@@ -15,7 +15,15 @@ import {
 } from "./dentist-config";
 
 export default function Home() {
-  const { hero, servicesSection, proofSection,faqSection,contactSection, contact } = dentistContentConfig;
+  const {
+    hero,
+    aboutSection,
+    servicesSection,
+    proofSection,
+    faqSection,
+    contactSection,
+    contact,
+  } = dentistContentConfig;
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900">
@@ -27,7 +35,10 @@ export default function Home() {
           design={dentistDesignConfig.hero}
         />
 
-        <AboutSection />
+        <AboutSection
+          content={aboutSection}
+          design={dentistDesignConfig.aboutSection}
+        />
 
         <ProofSection
           content={proofSection}
@@ -39,18 +50,17 @@ export default function Home() {
           design={dentistDesignConfig.servicesSection}
         />
 
-        <DentistSection />
+        {/* HighlightsSection (ex-DentistSection) will sit here later */}
 
         <FaqSection
           content={faqSection}
           design={dentistDesignConfig.faqSection}
         />
 
-
         <ContactSection
-        content={contactSection}
-        design={dentistDesignConfig.contactSection}
-      />
+          content={contactSection}
+          design={dentistDesignConfig.contactSection}
+        />
       </main>
       <ContactFooter />
     </div>
