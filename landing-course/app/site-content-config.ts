@@ -45,10 +45,26 @@ export type ServicesSectionContentConfig = {
   services: Service[];
 };
 
+
+export type ProofItem = {
+  label: string;          // e.g. "Years of experience", "Patients treated"
+  value: string;          // e.g. "10+ years", "5,000+"
+  description?: string;   // optional supporting line
+};
+
+export type ProofSectionContentConfig = {
+  title: string;
+  intro: string;
+  highlights: ProofItem[];
+  // later: testimonials, logos, etc., if needed
+};
+
 export type BusinessSiteContentConfig = {
   business: BusinessInfo;
   contact: BusinessContact;
   hero: HeroContentConfig;
   servicesSection: ServicesSectionContentConfig;
-  // later: proofSection, faqSection, contactSection, etc.
+  proofSection: ProofSectionContentConfig; // NEW
+  // later: faqSection, contactSection, etc.
 };
+
