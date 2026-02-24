@@ -59,12 +59,24 @@ export type ProofSectionContentConfig = {
   // later: testimonials, logos, etc., if needed
 };
 
+export type FaqItem = {
+  question: string;
+  answer: string;
+};
+
+export type FaqSectionContentConfig = {
+  title: string;
+  intro?: string;
+  items: FaqItem[];
+};
+
 export type BusinessSiteContentConfig = {
   business: BusinessInfo;
   contact: BusinessContact;
   hero: HeroContentConfig;
   servicesSection: ServicesSectionContentConfig;
-  proofSection: ProofSectionContentConfig; // NEW
-  // later: faqSection, contactSection, etc.
+  proofSection: ProofSectionContentConfig;
+  faqSection: FaqSectionContentConfig; // NEW
+  // later: contactSection, etc.
 };
 
