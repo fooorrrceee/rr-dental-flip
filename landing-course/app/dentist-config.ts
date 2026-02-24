@@ -6,6 +6,7 @@ import type {
   ProofItem,
   FaqItem,
   ContactChannel,
+  HighlightItem
 } from "./site-content-config";
 import type { BusinessSiteDesignConfig } from "./site-design-config";
 
@@ -153,6 +154,33 @@ const dentistContactChannels: ContactChannel[] = [
   },
 ];
 
+const dentistHighlights: HighlightItem[] = [
+  {
+    title: "Dr. Arjun Menon",
+    subtitle: "Consultant Dentist",
+    description:
+      "Focuses on gentle preventive care, fillings, and patient education so everyday visits feel simple and manageable.",
+    meta: "10+ years experience",
+    tags: ["Check-ups", "Fillings", "Preventive care"],
+  },
+  {
+    title: "Dr. Kavya S.",
+    subtitle: "Orthodontist",
+    description:
+      "Handles braces and clear aligners for children and adults, with treatment plans that fit your daily routine.",
+    meta: "Braces & aligners",
+    tags: ["Braces", "Clear aligners"],
+  },
+  {
+    title: "Visiting specialists",
+    subtitle: "Root canals & implants",
+    description:
+      "We bring in specialists for complex root canals and implants so you can get advanced treatment in one clinic.",
+    meta: "Advanced procedures",
+    tags: ["Root canals", "Implants"],
+  },
+];
+
 export const dentistContentConfig: BusinessSiteContentConfig = {
   business: {
     name: "Sample Dental Clinic",
@@ -231,6 +259,13 @@ export const dentistContentConfig: BusinessSiteContentConfig = {
     body:
       "At Sample Dental Clinic, we see everything from routine check-ups and children’s visits to braces, root canals, and missing teeth every week. Our goal is to make each visit feel predictable and manageable: we explain your options in simple language, suggest what truly needs attention now versus later, and help you plan treatment that fits your schedule and budget.",
   },
+  primaryHighlightsSection: {
+    sectionId: "team",
+    title: "Who will be treating you",
+    intro:
+      "You’ll see the same familiar faces for most visits, and we bring in specialists when advanced treatment is needed.",
+    items: dentistHighlights,
+  },
 };
 
 
@@ -253,5 +288,9 @@ export const dentistDesignConfig: BusinessSiteDesignConfig = {
   },
   aboutSection: {
     background: "default", // keep white; or "soft" if you want a band
+  },
+  primaryHighlightsSection: {
+    background: "default",
+    layout: "cards",
   },
 };

@@ -111,12 +111,12 @@ export type AboutSectionContentConfig = {
 
 
 export type HighlightItem = {
-  title: string;          // e.g. "Dr. Arjun Menon"
-  subtitle?: string;      // e.g. "Consultant Dentist"
-  description?: string;   // 2–3 line bio or detail
-  meta?: string;          // e.g. "10+ years experience"
-  tags?: string[];        // optional keywords
-  imageUrl?: string;      // optional portrait or icon
+  title: string;          // "Dr. Arjun Menon"
+  subtitle?: string;      // "Consultant Dentist"
+  description?: string;   // short bio / explanation
+  meta?: string;          // "10+ years experience"
+  tags?: string[];        // ["Root canals", "Implants"]
+  imageUrl?: string;      // optional portrait/icon
 };
 
 export type HighlightsSectionContentConfig = {

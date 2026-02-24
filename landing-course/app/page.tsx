@@ -7,7 +7,7 @@ import { ContactFooter } from "./components/ContactFooter";
 import { FaqSection } from "./components/FaqSection";
 import { ProofSection } from "./components/ProofSection";
 import { ContactSection } from "./components/ContactSection";
-// HighlightsSection will be added later
+import { HighlightsSection } from "./components/HighlightsSection";
 
 import {
   dentistContentConfig,
@@ -22,6 +22,7 @@ export default function Home() {
     proofSection,
     faqSection,
     contactSection,
+    primaryHighlightsSection,
     contact,
   } = dentistContentConfig;
 
@@ -50,7 +51,12 @@ export default function Home() {
           design={dentistDesignConfig.servicesSection}
         />
 
-        {/* HighlightsSection (ex-DentistSection) will sit here later */}
+        {primaryHighlightsSection && dentistDesignConfig.primaryHighlightsSection && (
+          <HighlightsSection
+            content={primaryHighlightsSection}
+            design={dentistDesignConfig.primaryHighlightsSection}
+          />
+        )}
 
         <FaqSection
           content={faqSection}
