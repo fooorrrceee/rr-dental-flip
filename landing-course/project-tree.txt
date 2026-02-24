@@ -19,14 +19,19 @@
 │   │   ├── ProofSection.tsx
 │   │   ├── Section.tsx
 │   │   ├── SectionHeader.tsx
-│   │   └── ServicesSection.tsx
+│   │   ├── ServicesSection.tsx
+│   │   ├── SiteFooter.tsx
+│   │   └── Tabs.tsx
 │   ├── dentist-config.ts
 │   ├── favicon.ico
 │   ├── globals.css
 │   ├── layout.tsx
 │   ├── lib
 │   │   └── analytics.ts
-│   └── page.tsx
+│   ├── page.tsx
+│   ├── playground
+│   │   └── tabs
+│   └── site-config.ts
 ├── components
 │   └── ui
 │       ├── accordion.tsx
@@ -3825,4 +3830,4 @@
 ├── README.md
 └── tsconfig.json
 
-1142 directories, 2684 files
+1144 directories, 2687 files
