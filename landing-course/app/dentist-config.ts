@@ -4,6 +4,7 @@ import type {
   Service,
   ProofSectionContentConfig,
   ProofItem,
+  FaqItem,
 } from "./site-content-config";
 import type { BusinessSiteDesignConfig } from "./site-design-config";
 
@@ -96,6 +97,29 @@ const dentistProofHighlights: ProofItem[] = [
   },
 ];
 
+const dentistFaqItems: FaqItem[] = [
+  {
+    question: "Do I need an appointment or can I walk in?",
+    answer:
+      "We recommend booking an appointment so we can give you an exact time slot, but we do our best to accommodate walk-ins for urgent issues.",
+  },
+  {
+    question: "How often should I come for a check-up?",
+    answer:
+      "Most adults and children do well with a check-up and cleaning every 6 months. If you have ongoing treatment, we’ll suggest a schedule that fits your case.",
+  },
+  {
+    question: "I’m anxious about dental treatment. Can you help?",
+    answer:
+      "Yes. We take extra time to explain each step, use gentle techniques, and check in with you often. For very anxious patients, we can discuss additional comfort options.",
+  },
+  {
+    question: "Do you treat children?",
+    answer:
+      "Yes, we see children regularly for check-ups, fillings, and preventive care. We focus on building trust so visits get easier over time.",
+  },
+];
+
 export const dentistContentConfig: BusinessSiteContentConfig = {
   business: {
     name: "Sample Dental Clinic",
@@ -137,17 +161,26 @@ export const dentistContentConfig: BusinessSiteContentConfig = {
       "We combine gentle care, clear explanations, and consistent follow-ups so your dental visits feel manageable, not stressful.",
     highlights: dentistProofHighlights,
   },
+  faqSection: {
+    title: "Common questions from patients",
+    intro:
+      "If you’re unsure about something, you’re not alone. Here are answers to questions we hear often in the clinic.",
+    items: dentistFaqItems,
+  },
 };
 
 export const dentistDesignConfig: BusinessSiteDesignConfig = {
   hero: {
-    layout: "split",       // matches your current hero with text + image area
-    background: "soft",    // soft tinted background
+    layout: "split",
+    background: "soft",
   },
   servicesSection: {
-    background: "default", // keep white background for services
+    background: "default",
   },
   proofSection: {
-    background: "default", // we can flip this to "soft" later if you want alternation
+    background: "default",
+  },
+  faqSection: {
+    background: "soft", // slightly tinted band to separate FAQ
   },
 };
