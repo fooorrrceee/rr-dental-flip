@@ -85,18 +85,21 @@ const dentistProofHighlights: ProofItem[] = [
   {
     label: "Years of experience",
     value: "10+ years",
-    description: "Caring for families in and around RS Puram.",
+    description: "Expertise established through a decade of treating patients and teaching future dentists.",
   },
-  {
-    label: "Patients treated",
-    value: "5,000+",
-    description: "Check-ups, fillings, braces, implants, and more.",
+
+   {
+  label: "Families around RS Puram",
+  value: "5,000+ visits",
+  description: "Regular check-ups, fillings, braces, and more from nearby neighbourhoods.",
   },
+  
   {
     label: "Emergency response",
     value: "Same-day slots",
     description: "For severe pain or sudden dental problems.",
   },
+ 
 ];
 
 const dentistFaqItems: FaqItem[] = [
@@ -204,7 +207,7 @@ export const dentistContentConfig: BusinessSiteContentConfig = {
     title:
       "Gentle dental care in RS Puram for everyday problems and long-term smile health",
     subtitle:
-      "From toothaches and cleaning to braces and missing teeth, we focus on clear explanations, comfort, and treatment plans that fit your daily life.",
+      "Tooth pain, bleeding gums, crooked teeth, or missing teeth—we focus on clear explanations, gentle treatment, and plans that fit your daily life.",
     primaryCtaLabel: "Book an appointment or ask a question",
     primaryCtaHref: "#contact",
     imageAlt:
@@ -213,25 +216,25 @@ export const dentistContentConfig: BusinessSiteContentConfig = {
   servicesSection: {
     title: "Our key services",
     intro:
-      "From everyday check-ups to advanced treatments, we help you deal with common dental problems in one clinic.",
+      "From routine check-ups and kids’ visits to braces, root canals, and missing teeth, you can handle most common dental problems under one roof.",
     services: dentistServices,
   },
   proofSection: {
-    title: "Why local families trust us",
+    title: "Why local families choose us",
     intro:
-      "We combine gentle care, clear explanations, and consistent follow-ups so your dental visits feel manageable, not stressful.",
+      "We focus on gentle care, clear options, and consistent follow-ups so visits feel predictable instead of stressful.",
     highlights: dentistProofHighlights,
   },
   faqSection: {
-    title: "Common questions from patients",
+    title: "Questions patients often ask before booking",
     intro:
-      "If you’re unsure about something, you’re not alone. Here are answers to questions we hear often in the clinic.",
+      "If you’re unsure about costs, appointments, or what to expect, these answers may help you decide your next step.",
     items: dentistFaqItems,
   },
   contactSection: {
-    title: "Book an appointment or ask a question",
+    title: "Book an appointment or ask a quick question",
     intro:
-      "Share a few details and we’ll call or message you back during clinic hours to confirm a time.",
+      "Share a few details now and we’ll call or message you during clinic hours to confirm a time or suggest next steps.",
     note:
       "You can also call or WhatsApp us directly using the details below if you prefer.",
     clinicName: "Sample Dental Clinic",
