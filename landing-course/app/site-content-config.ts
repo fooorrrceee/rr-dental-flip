@@ -70,13 +70,39 @@ export type FaqSectionContentConfig = {
   items: FaqItem[];
 };
 
+
+export type ContactChannel = {
+  type: "phone" | "whatsapp" | "email" | "location" | "other";
+  label: string;       // e.g. "Call us", "WhatsApp", "Email", "Visit us"
+  value: string;       // e.g. "+91 95...", "clinic@example.com"
+  href?: string;       // tel:..., mailto:..., https link, etc.
+  icon?: string;       // optional semantic key for later icon mapping
+};
+
+export type ContactFormConfig = {
+  heading: string;
+  subheading?: string;
+  formspreeEndpoint: string;
+  submitLabel: string;
+  successMessage: string;
+  errorMessage: string;
+};
+
+export type ContactSectionContentConfig = {
+  title: string;
+  intro?: string;
+  addressLines?: string[];         // simple address block
+  channels: ContactChannel[];      // phone, WhatsApp, email, map, etc.
+  form: ContactFormConfig;
+};
+
 export type BusinessSiteContentConfig = {
   business: BusinessInfo;
-  contact: BusinessContact;
+  contact: BusinessContact;              // core NAP fields
   hero: HeroContentConfig;
   servicesSection: ServicesSectionContentConfig;
   proofSection: ProofSectionContentConfig;
-  faqSection: FaqSectionContentConfig; // NEW
-  // later: contactSection, etc.
+  faqSection: FaqSectionContentConfig;
+  contactSection: ContactSectionContentConfig; // NEW
 };
 
